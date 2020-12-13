@@ -1,6 +1,7 @@
-#have to download image for the example 
+#have to download image for the example
 
 from tkinter import *
+from tkinter.font import Font
 from PIL import ImageTk,Image
 from random import *
 
@@ -8,8 +9,12 @@ from random import *
 # import threading
 
 win = Tk()
-win.geometry("350x750")
-
+#win.geometry("350x750")
+win.geometry("390x846")
+bg = Image.open("Start_Screen_BG.png")
+resized = bg.resize((390, 846), Image.ANTIALIAS)
+bgImage = ImageTk.PhotoImage(resized)
+Label(win, image = bgImage).place(relwidth = 1, relheight = 1)
 Label(win, text="ASMD", justify=CENTER, font="Times 21").pack()
 Label(win, text="Learning Center", font="Times 17").pack()
 
@@ -314,7 +319,7 @@ def ansEx(a):
 
     if a == "+":
         answerex_button = Button(frame2, text="Answer", command=answer_add)
-        answerex.pack()
+        answerex_button.pack()
 
     elif a == "-":
         answerex_button = Button(frame2, text="Answer", command=answer_sub)
@@ -357,8 +362,8 @@ def add():
     add2.grid(row=0,column=2)
 
     #image path
-    pic1 = "C:/Users/yenna/Desktop/halo/" + str(a) + ".jpg"
-    pic2 = "C:/Users/yenna/Desktop/halo/" + str(b) + ".jpg"
+    pic1 = "C:/Users/Admin/Desktop/halo/" + str(a) + ".jpg"
+    pic2 = "C:/Users/Admin/Desktop/halo/" + str(b) + ".jpg"
     add_image1 = ImageTk.PhotoImage(Image.open(pic1))
     add_image2 = ImageTk.PhotoImage(Image.open(pic2))
 
@@ -393,8 +398,8 @@ def sub():
     sign.grid(row=0,column=1)
     sub2.grid(row=0,column=2)
 
-    pic1 = "C:/Users/yenna/Desktop/halo/" + str(a) + ".jpg"
-    pic2 = "C:/Users/yenna/Desktop/halo/" + str(b) + ".jpg"
+    pic1 = "C:/Users/Admin/Desktop/halo/" + str(a) + ".jpg"
+    pic2 = "C:/Users/Admin/Desktop/halo/" + str(b) + ".jpg"
     add_image1 = ImageTk.PhotoImage(Image.open(pic1))
     add_image2 = ImageTk.PhotoImage(Image.open(pic2))
 
@@ -427,8 +432,8 @@ def mul():
     sign.grid(row=0, column=1)
     mul2.grid(row=0, column=2)
 
-    pic1 = "C:/Users/yenna/Desktop/halo/" + str(a) + ".jpg"
-    pic2 = "C:/Users/yenna/Desktop/halo/" + str(b) + ".jpg"
+    pic1 = "C:/Users/Admin/Desktop/halo/" + str(a) + ".jpg"
+    pic2 = "C:/Users/Admin/Desktop/halo/" + str(b) + ".jpg"
     add_image1 = ImageTk.PhotoImage(Image.open(pic1))
     add_image2 = ImageTk.PhotoImage(Image.open(pic2))
 
